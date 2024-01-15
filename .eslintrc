@@ -1,0 +1,39 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "prettier"],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "project": ["tsconfig.json"]
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unsafe-return": "error",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/lines-between-class-members": [
+        "error",
+        "always",
+        { "exceptAfterSingleLine": true }
+      ],
+      "@typescript-eslint/non-nullable-type-assertion-style": "error",
+      "@typescript-eslint/explicit-function-return-type": "error",
+      "@typescript-eslint/member-ordering": [
+        "error",
+        {
+          "default": {
+            "memberTypes": [
+              "readonly-field",
+              "field",
+              ["get", "set"],
+              "constructor",
+              "method"
+            ]
+          }
+        }
+      ]
+    }
+  }
